@@ -298,6 +298,7 @@ define(["../avalon.getModel",
                 avalon.unbind(window, "resize", element.resizeCallback)
                 avalon.unbind(window, "scroll", element.scrollCallback)
                 if (!dialogNum) {
+                    vmodel._close(); // 防止未经正常关闭dialog而导致的异常 
                     maskLayer.parentNode.removeChild(maskLayer)
                     maskLayer.parentNode.removeChild(maskLayerSimulate)
                     maskLayerExist = false
